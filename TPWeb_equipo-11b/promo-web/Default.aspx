@@ -10,15 +10,15 @@
         <div class="card-body">
           <h5 class="card-title">TP Web ASP.NET</h5>
           <p class="card-text">
-            Bienvenidos a la aplicación web dedicada a reclamar código de voucher, 
-            elegir artículos y dar de alta clientes. Sitio desarrollado por el equipo 11b:
-          </p>
+            Bienvenidos a la aplicación web dedicada a reclamar códigos de voucher, 
+            elegir artículos y dar de alta a clientes.</p>
+            <p>Sitio web desarrollado por el equipo 11b:</p>
             <ul>
             <li>Carolina Mabel Gandin</li>
             <li>Celeste Ayelén Diaz</li>
             <li>Santiago Camilo Gerardo Vanderstichel</li>
           </ul>
-          <a href="#" class="btn btn-primary">Reclamar Voucher</a>
+          <a href="ReclamarVoucher.aspx" class="btn btn-primary">Reclamar Voucher</a>
         </div>
       </div>
     </div>
