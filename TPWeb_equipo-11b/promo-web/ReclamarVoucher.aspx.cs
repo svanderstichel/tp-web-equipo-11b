@@ -13,5 +13,17 @@ namespace promo_web
         {
 
         }
+
+        protected void btnCanjear_Click(object sender, EventArgs e)
+        {
+            string CodigoCanje = txbCargaCodigo.Text;// guardo el dato del boton 
+            lblValidar.Text = "Estamos validando el codigo: " + CodigoCanje;
+           
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx", false);
+        }
     }
 }
