@@ -28,9 +28,11 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-    <footer class="bg-dark text-white text-center py-3">
+        </div>
+    <footer class="bg-dark text-white text-center py-3 fixed-bottom">
     <div class="container">
     <p class="mb-0"> Programación III - UTN</p>
   </div>
