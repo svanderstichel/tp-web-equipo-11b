@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div class="container my-5">
+<div class="my-5">
   <div class="row justify-content-center">
     <div class="col-md-6 col-lg-4">
       <div class="card shadow-sm">
