@@ -94,5 +94,22 @@ namespace negocio
             }
 
         }
+        public string BuscarDatoString()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                string valor = (string)comando.ExecuteScalar();
+
+                return valor;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
     }
 }
