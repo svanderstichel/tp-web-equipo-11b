@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,9 @@ namespace dominio
 {
     public class Clientes
     {
+        [DisplayName("Id")]
+
+        public int Id { get; set; }
         public string Documento { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
