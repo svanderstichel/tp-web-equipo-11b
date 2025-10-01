@@ -1,77 +1,71 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegistrarCliente.aspx.cs" Inherits="promo_web.RegistrarCliente" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <form class="row g-6">
-        <div class="col-3">
-          <label for="validationServerDNI">DNI</label>
-         <input type="text" class="form-control is-invalid" id="validationServerDNI" placeholder="DNI" required">
-   
-            <div class="invalid-feedback">
-        Falta DNI!
-      </div>
+    <br />
 
-            </div>
-  <div class="row g-6">
-     <div class="col-3">
-          <label for="validationServerNombre">Nombre</label>
-         <input type="text" class="form-control is-invalid" id="validationServerNombre" placeholder="Nombre" aria-label="Nombre">
-               <div class="invalid-feedback">
-        Falta Nombre
-      </div>
-     </div>
-     <div class="col-3">
-          <label for="validationServerApellido">Apelliido</label>
-         <input type="text" class="form-control is-invalid" id="validationServerApellido" placeholder="Apellido" aria-label="Apellido">
-               <div class="invalid-feedback">
-        Falta Apellido
-      </div>
-     </div>
-     <div class="col-3">
-      <label for="validationServerMail">Mail</label>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroupPrepend3">@</span>
+    <form class="row g-6">
+
+        <div class="col-3">
+            <label for="txtDni" class="form-label">DNI</label>
+            <asp:TextBox ID="txtDni" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtDni_TextChanged" runat="server"></asp:TextBox>
         </div>
-        <input type="text" class="form-control is-invalid" id="validationServerMail" placeholder="mail@mail.com" aria-describedby="inputGroupPrepend3" required>
-        <div class="invalid-feedback"> Falta Mail </div>
-       </div> 
-     </div>
-   </div>
-    
- <div class="row g-6">
-         <div class="col-3">
-          <label for="validationServerDireccion">Direccion</label>
-         <input type="text" class="form-control is-invalid" id="validationServerDireccion" placeholder="Direccion" aria-label="Direccion">
-               <div class="invalid-feedback">
-        Falta Direccion
-      </div>
+
+        <div class="row g-6">
+
+            <div class="col-3">
+                <label for="txtNombre" class="form-label">Nombre</label>
+                <asp:TextBox ID="txtNombre" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
-   <div class="col-3">
-    <label for="validationServerCiudad">Ciudad</label>
-   <input type="text" class="form-control is-invalid" id="validationServerCiudad" placeholder="Ciudad" aria-label="Ciudad">
-         <div class="invalid-feedback">
-  Falta Ciudad
-</div>
-      </div>
-          <div class="col-3">
-          <label for="validationServerCP">CP</label>
-         <input type="text" class="form-control is-invalid" id="validationServerCP" placeholder="CP" aria-label="CP">
-               <div class="invalid-feedback">
-        Falta CP
-      </div>
+
+            <div class="col-3">
+                <label for="txtApellido" class="form-label">Apellido</label>
+                <asp:TextBox ID="txtApellido" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
-       </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Acepto los Terminos y Condiciones
-      </label>
+        
+
+            <div class="col-3">
+                <label for="txtMail">Mail</label>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="spMail">@</span>
+                </div>
+                 <asp:TextBox ID="txtMail" CssClass="form-control" runat="server"></asp:TextBox>
+                <!--input type="text" class="form-control is-invalid" id="txtMail" placeholder="mail@mail.com" aria-describedby="txtMail" required-->
+                
+            </div>
+        </div>
+
     </div>
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Participar!</button>
-  </div>
-</form>
+ <div class="row g-6">
+
+     <div class="col-3">
+         <label for="txtDireccion" class="form-label">Direccion</label>
+         <asp:TextBox ID="txtDireccion" CssClass="form-control" runat="server"></asp:TextBox>
+     </div>
+
+     <div class="col-3">
+         <label for="txtCiudad" class="form-label">Ciudad</label>
+         <asp:TextBox ID="txtCiudad" CssClass="form-control" runat="server"></asp:TextBox>
+     </div>
+
+     <div class="col-3">
+         <label for="txtCP"class="form-label">CP</label>
+         <asp:TextBox ID="txtCP" CssClass="form-control" runat="server"></asp:TextBox>
+     </div>
+
+ </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Acepto los Terminos y Condiciones
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <asp:Button Text="Participar!" ID="btnParticipar" OnClick="btnParticipar_Click" CssClass="btn btn-primary" runat="server"></asp:Button>
+        </div>
+    </form>
 </asp:Content>
