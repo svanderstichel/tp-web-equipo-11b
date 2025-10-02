@@ -59,7 +59,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><%: articulo.Nombre %></h5>
                     <p class="card-text"><%: articulo.Descripcion %></p>
-                    <a href="#" class="btn btn-primary">Participá!</a>
+                    <a href="RegistrarCliente.aspx?articulo=<%: articulo.IdArticulo %>" class="btn btn-primary">Participá!</a>
                 </div>
             </div>
         </div>
