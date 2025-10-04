@@ -31,7 +31,7 @@ namespace promo_web
             if (negocio.ValidarVoucher(CodigoCanje))
             {
                  
-                Session["Codigo"] = CodigoCanje;//guarda el dato para luego consumirlo desde otras paginas
+                Session["CodigoVoucher"] = CodigoCanje;//guarda el dato para luego consumirlo desde otras paginas
 
                 
                 Response.Redirect("ElegirArticulos.aspx", false); // redirige a la pag de los articulos

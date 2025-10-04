@@ -54,14 +54,14 @@ namespace promo_web
                 }
 
 
-               // VouchersNegocio vouchersNegocio = new VouchersNegocio();
-               // Vouchers voucher = new Vouchers();
-               // voucher.IdVouchers = int.Parse(Session["CodigoVoucher"].ToString());
-               // voucher.IdCliente = cliente.Id;
-               // voucher.fechaCarg = DateTime.Now;
-               // voucher.IdArticulo = int.Parse(Request.QueryString["id"]);
+                VouchersNegocio vouchersNegocio = new VouchersNegocio();
+                Vouchers voucher = new Vouchers();
+                voucher.IdVouchers = Session["CodigoVoucher"].ToString();
+                voucher.IdCliente = negocio.BuscarClientePorDni(cliente.Documento).Id;
+                voucher.fechaCarg = DateTime.Now;
+                voucher.IdArticulo = int.Parse(Request.QueryString["articulo"]);
 
-               // vouchersNegocio.CompletarVoucher(voucher);
+                vouchersNegocio.CompletarVoucher(voucher);
 
                 Response.Redirect("Exito.aspx", false);
             }
