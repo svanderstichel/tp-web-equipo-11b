@@ -1,11 +1,12 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using dominio;
-using negocio;
 
 namespace promo_web
 {
@@ -31,7 +32,18 @@ namespace promo_web
                 cliente.Ciudad = txtCiudad.Text;
                 cliente.CP = int.Parse(txtCP.Text);
 
-                negocio.Agregar(cliente);
+                Clientes existe = new Clientes();
+                existe = negocio.BuscarClientePorDni(cliente.Documento);
+
+                if (existe != null)
+                {
+                    negocio.Actualizar(cliente);
+                }
+                else
+                {
+                    negocio.Agregar(cliente);
+                }
+
 
                // VouchersNegocio vouchersNegocio = new VouchersNegocio();
                // Vouchers voucher = new Vouchers();
