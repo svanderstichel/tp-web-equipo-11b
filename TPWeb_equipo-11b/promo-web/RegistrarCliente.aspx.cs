@@ -21,9 +21,16 @@ namespace promo_web
         {
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                {
+                    return;
+                }
+
                 Clientes cliente = new Clientes();
                 ClientesNegocio negocio = new ClientesNegocio();
 
+                //Guardo los datos en cliente
                 cliente.Documento = txtDni.Text;
                 cliente.Nombre = txtNombre.Text;
                 cliente.Apellido = txtApellido.Text;
@@ -32,9 +39,11 @@ namespace promo_web
                 cliente.Ciudad = txtCiudad.Text;
                 cliente.CP = int.Parse(txtCP.Text);
 
+                //busco si ya existe en la db por documento
                 Clientes existe = new Clientes();
                 existe = negocio.BuscarClientePorDni(cliente.Documento);
 
+                //si existe lo actualizo, sino lo agrego
                 if (existe != null)
                 {
                     negocio.Actualizar(cliente);
