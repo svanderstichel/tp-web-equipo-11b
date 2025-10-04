@@ -20,16 +20,31 @@ namespace promo_web
 
         protected void btnCanjear_Click(object sender, EventArgs e)
         {
+           
             string CodigoCanje = txbCargaCodigo.Text;// guardo el dato del boton 
-            lblValidar.Text = "Estamos validando el codigo: " + CodigoCanje;
+            
+                        
+            VouchersNegocio negocio = new VouchersNegocio();
+            
+            //bool esValido = negocio.ValidarVoucher(CodigoCanje);
+
+            if (negocio.ValidarVoucher(CodigoCanje))
+            {
+                 
+                Session["Codigo"] = CodigoCanje;//guarda el dato para luego consumirlo desde otras paginas
+
+                
+                Response.Redirect("ElegirArticulos.aspx", false); // redirige a la pag de los articulos
+
+            }
+            else
+            {
+                lblValidar.Text = "El còdigo ingresado no existe o ya fue canjeado ";
+                
+
+            }
             if (IsPostBack)
                 txbCargaCodigo.Text = string.Empty;//limpio el campo de carga
-
-            Session.Add("Codigo", CodigoCanje); //guarda el dato para luego consumirlo desde otras paginas
-
-
-            //Response.Redirect("ElegirArticulos.aspx", false); cuando valide que el codigo es correcto debe ir directo a la pag de seleccionar el articulo
-
 
         }
 

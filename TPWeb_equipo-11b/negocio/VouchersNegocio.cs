@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,6 +40,39 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
+
+        }
+
+        public bool ValidarVoucher(string codigo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            
+            
+            try
+            {
+                datos.setearConsulta("SELECT FechaCanje FROM Vouchers WHERE CodigoVoucher = @codigo and FechaCanje IS NULL");
+                datos.setearParametro("@codigo", codigo);
+                datos.ejercutarLectura();
+
+                
+
+                if (datos.lector.Read())
+                {
+                                     
+                      
+                    return true;
+                }
+                else { return false; }
+
+            }
+
+
+            catch (Exception)
+            {
+
+                throw;
+            }
+
 
         }
     }
