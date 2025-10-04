@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="ElegirArticulos.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="Exito.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ReclamarVoucher.aspx" />
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="ElegirArticulos.aspx.designer.cs">
       <DependentUpon>ElegirArticulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="Exito.aspx.cs">
       <DependentUpon>Exito.aspx</DependentUpon>

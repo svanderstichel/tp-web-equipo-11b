@@ -15,7 +15,15 @@ namespace promo_web
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulos = negocio.ListarArticulos();
+            try
+            {
+                listaArticulos = negocio.ListarArticulos();
+            }
+            catch(Exception)
+            {
+                Session.Add("Error","Se produjo un error de conexión a la base de datos");
+                Response.Redirect("Error.aspx");
+            }
         }
     }
 }

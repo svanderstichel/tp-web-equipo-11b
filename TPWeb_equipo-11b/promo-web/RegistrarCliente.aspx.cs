@@ -65,10 +65,10 @@ namespace promo_web
 
                 Response.Redirect("Exito.aspx", false);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Session.Add("error", ex);
-                throw;
+                Session.Add("Error", "Se produjo un error al asignar el voucher");
+                Response.Redirect("Error.aspx");
             }
 
         }
