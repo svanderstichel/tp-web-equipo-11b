@@ -32,6 +32,16 @@ namespace promo_web
                 cliente.CP = int.Parse(txtCP.Text);
 
                 negocio.Agregar(cliente);
+
+               // VouchersNegocio vouchersNegocio = new VouchersNegocio();
+               // Vouchers voucher = new Vouchers();
+               // voucher.IdVouchers = int.Parse(Session["CodigoVoucher"].ToString());
+               // voucher.IdCliente = cliente.Id;
+               // voucher.fechaCarg = DateTime.Now;
+               // voucher.IdArticulo = int.Parse(Request.QueryString["id"]);
+
+               // vouchersNegocio.CompletarVoucher(voucher);
+
                 Response.Redirect("Exito.aspx", false);
             }
             catch (Exception ex)
