@@ -20,31 +20,39 @@ namespace promo_web
 
         protected void btnCanjear_Click(object sender, EventArgs e)
         {
-           
-            string CodigoCanje = txbCargaCodigo.Text;// guardo el dato del boton 
-            
-                        
-            VouchersNegocio negocio = new VouchersNegocio();
-            
-            //bool esValido = negocio.ValidarVoucher(CodigoCanje);
-
-            if (negocio.ValidarVoucher(CodigoCanje))
+            try
             {
-                 
-                Session["CodigoVoucher"] = CodigoCanje;//guarda el dato para luego consumirlo desde otras paginas
+                string CodigoCanje = txbCargaCodigo.Text;// guardo el dato del boton 
 
-                
-                Response.Redirect("ElegirArticulos.aspx", false); // redirige a la pag de los articulos
 
+                VouchersNegocio negocio = new VouchersNegocio();
+
+                //bool esValido = negocio.ValidarVoucher(CodigoCanje);
+
+                if (negocio.ValidarVoucher(CodigoCanje))
+                {
+
+                    Session["CodigoVoucher"] = CodigoCanje;//guarda el dato para luego consumirlo desde otras paginas
+
+
+                    Response.Redirect("ElegirArticulos.aspx", false); // redirige a la pag de los articulos
+
+                }
+                else
+                {
+                    lblValidar.Text = "El código ingresado no existe o ya fue canjeado ";
+
+
+                }
+                if (IsPostBack)
+                    txbCargaCodigo.Text = string.Empty;//limpio el campo de carga
             }
-            else
+            catch (Exception)
             {
-                lblValidar.Text = "El còdigo ingresado no existe o ya fue canjeado ";
-                
-
+                Session.Add("Error", "Se produjo un error al asignar el voucher");
+                Response.Redirect("Error.aspx");
             }
-            if (IsPostBack)
-                txbCargaCodigo.Text = string.Empty;//limpio el campo de carga
+            
 
         }
 
